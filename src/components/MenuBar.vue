@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="MenuBar">
     <b-button pill @click="previous()">precedent</b-button>
     <br />
     <br />
@@ -47,13 +47,12 @@ export default {
       this.getListFiles();
     },
     chooseDirectory: function(name, type) {
-      if (type != true) {
-        console.log(`${name} est un fichier`);
-      } else {
+      if (type == true) {
+        this.currentPath = join(this.currentPath, name);
+        this.getListFiles();
         console.log(`${name} est un document`);
-      }
-    },
-    
+      } else alert(`${name} est un fichier`);
+    }
   }
 };
 </script>
