@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       currentPath: process.cwd(),
-      datas: []
+      datas: [],
     };
   },
   mounted() {
@@ -70,7 +70,7 @@ export default {
         this.getListFiles();
         console.log(`${name} est un document`);
       } else alert(`${name} est un fichier`);
-    }
+    },
   }
 };
 </script>
