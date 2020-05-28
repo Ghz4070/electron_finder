@@ -21,7 +21,7 @@ html {
   color: #ffffff;
 }
 
-#nav {
+/* #nav {
   padding: 30px;
 }
 
@@ -32,5 +32,5 @@ html {
 
 #nav a.router-link-exact-active {
   color: #42b983;
-}
+} */
 </style>

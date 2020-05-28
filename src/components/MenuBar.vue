@@ -1,14 +1,32 @@
 <template>
   <div class="MenuBar">
-    <b-button pill @click="previous()">precedent</b-button>
-    <br />
-    <br />
-    <!-- for [declaration de varibale qu'on affiche] in [l'objet/tableau/json sur quoi on boucle] -->
-    <li v-for="(data, index) in datas" :key="index">
-      <span
-        @click="chooseDirectory(data.name, data.isdirectory)"
-      >{{ data.name }}- {{ data.isdirectory }}</span>
-    </li>
+    <h4 class="mt-5">{{ currentPath }}</h4>
+    <b-button pill @click="previous()" class="mt-2 mb-5">precedent</b-button>
+    <b-form inline>
+      <!-- for [declaration de varibale qu'on affiche] in [l'objet/tableau/json sur quoi on boucle] -->
+      <div v-for="(data, index) in datas" :key="index">
+        <b-row>
+          <b-col>
+            <div
+              v-if="data.isdirectory == true"
+              @click="chooseDirectory(data.name, data.isdirectory)"
+              class="cursorPointer mr-2"
+            >
+              <img src="../assets/img/folder.png" alt="Folder" width="100" />
+              <h5>{{ data.name }}</h5>
+            </div>
+            <div
+              v-else
+              @click="chooseDirectory(data.name, data.isdirectory)"
+              class="cursorPointer mr-2"
+            >
+              <img src="../assets/img/file.png" alt="File" width="100" />
+              <h5>{{ data.name }}</h5>
+            </div>
+          </b-col>
+        </b-row>
+      </div>
+    </b-form>
   </div>
 </template>
 
@@ -56,3 +74,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.cursorPointer {
+  cursor: pointer;
+}
+</style>

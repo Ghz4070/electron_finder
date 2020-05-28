@@ -1,6 +1,8 @@
 <template>
   <div class="home">
+    <b-container>
     <MenuBar />
+    </b-container>
   </div>
 </template>
 
