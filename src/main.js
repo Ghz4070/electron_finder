@@ -1,4 +1,4 @@
-import devtools from '@vue/devtools'
+// import devtools from '@vue/devtools'
 
 import Vue from 'vue'
 
@@ -10,9 +10,10 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-if (process.env.NODE_ENV === 'development') {
+// devtools vuejs
+/* if (process.env.NODE_ENV === 'development') {
   devtools.connect('localhost', '8098');
-}
+} */
 
 Vue.config.productionTip = false
 
